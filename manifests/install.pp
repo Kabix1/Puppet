@@ -20,4 +20,21 @@ class setup::install inherits setup{
   package { 'guake':
     ensure =>  latest,
   }
+
+  package { 'build-essential':
+    ensure => latest,
+  }
+
+  packet { 'cmake':
+    ensure => latest,
+  }
+
+  packet { 'python-dev':
+    ensure => latest,
+  }
+
+  packet { 'python3-dev':
+    ensure => latest,
+  }
+
 }
