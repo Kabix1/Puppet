@@ -25,15 +25,15 @@ class setup::install inherits setup{
     ensure => latest,
   }
 
-  packet { 'cmake':
+  package { 'cmake':
     ensure => latest,
   }
 
-  packet { 'python-dev':
+  package { 'python-dev':
     ensure => latest,
   }
 
-  packet { 'python3-dev':
+  package { 'python3-dev':
     ensure => latest,
   }
 
