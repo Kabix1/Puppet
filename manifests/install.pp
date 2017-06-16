@@ -1,4 +1,6 @@
 class setup::install inherits setup{
+
+
   package { 'tmux':
     ensure =>  latest,
   }
