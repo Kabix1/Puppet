@@ -1,4 +1,4 @@
-class setup::install inherits setup {
+class setup::install inherits setup{
   package { 'tmux':
     ensure =>  latest,
   }
@@ -15,7 +15,7 @@ class setup::install inherits setup {
     ensure =>  latest,
   }
 
-  package { 'Guake':
+  package { 'guake':
     ensure =>  latest,
   }
 }
