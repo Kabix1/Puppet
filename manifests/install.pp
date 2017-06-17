@@ -1,21 +1,37 @@
 class setup::install inherits setup{
-  package { 'tmux':
+
+  Package {
     ensure =>  latest,
+  }
+
+  package { 'tmux':
   }
 
   package { 'vim':
-    ensure =>  latest,
   }
 
   package { 'zsh':
-    ensure =>  latest,
   }
 
   package { 'curl':
-    ensure =>  latest,
   }
 
   package { 'guake':
-    ensure =>  latest,
   }
+
+  package { 'cmake':
+  }
+
+  package {'build-essential':
+  }
+
+  package {'clang':
+  }
+
+  package {'python-pip':
+  }
+
+  package {'python-lxml':
+  }
+
 }
