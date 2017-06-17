@@ -42,4 +42,5 @@ class setup::config inherits setup {
     cwd         => "/home/olle/",
     creates     => '/home/olle/.oh-my-zsh'
   }
+  # exec { '/usr/bin/python3 /home/olle/.vim/bundle/youcompleteme/install.py'
 }
