@@ -17,6 +17,10 @@ class setup::config inherits setup {
     ensure =>  directory,    
   }
 
+  file { "/home/$username/.config":
+    ensure => directory,
+  }
+
   file { "/home/$username/.config/puppet_managed":
     ensure  => directory,
     recurse => true,
