@@ -10,4 +10,8 @@ class setup::install inherits setup{
     package { "$pack":
     }
   }
+
+  package { "powerline-status":
+    provider => "pip,
+
 }
