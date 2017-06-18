@@ -3,38 +3,11 @@ class setup::install inherits setup{
   Package {
     ensure =>  latest,
   }
+  
+  $packages = ["tmux", "vim", "zsh", "curl", "guake", "build-essential", "cmake", "python-dev", "python3-dev", "clang", "python-pip"]
 
-  package { 'tmux':
+  each($packages) |$pack| {
+    package { "$pack":
+    }
   }
-
-  package { 'vim':
-  }
-
-  package { 'zsh':
-  }
-
-  package { 'curl':
-  }
-
-  package { 'guake':
-  }
-
-  package { 'build-essential':
-  }
-
-  package { 'cmake':
-  }
-
-  package { 'python-dev':
-  }
-
-  package { 'python3-dev':
-  }
-
-  package {'clang':
-  }
-
-  package {'python-pip':
-  }
-
 }
