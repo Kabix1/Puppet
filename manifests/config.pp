@@ -21,10 +21,11 @@ class setup::config inherits setup {
     ensure => directory,
   }
 
-  file { "/home/$username/.config/puppet_managed":
-    ensure  => directory,
-    recurse => true,
-    source  =>  'puppet:///modules/setup/configs'
+  vcsrepo { "/home/$username/.config/puppet_managed":
+    ensure  => latest,
+    provider => git,
+    source  =>  'https://github.com/Kabix1/Configs.git',
+    user => "$username"
   }
   
   each($files) |$conf| {
