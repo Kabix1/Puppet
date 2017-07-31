@@ -27,14 +27,6 @@ class setup::config inherits setup {
     source  =>  'https://github.com/Kabix1/Configs.git',
     user => "$username"
   }
-  
-  each($files) |$conf| {
-    file { "/home/$username/$conf":
-      ensure => link,
-      target => "/home/$username/.config/puppet_managed/$conf",
-      force  => true
-    }
-  }
 
   vcsrepo { "/home/$username/.vim/bundle/Vundle.vim":
     ensure   => latest,
@@ -46,6 +38,14 @@ class setup::config inherits setup {
   exec { '/bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"':
     cwd         => "/home/$username",
     creates     => "/home/$username/.oh-my-zsh"
+  }
+
+  each($files) |$conf| {
+    file { "/home/$username/$conf":
+      ensure => link,
+      target => "/home/$username/.config/puppet_managed/$conf",
+      force  => true
+    }
   }
   # exec { '/usr/bin/python3 /home/olle/.vim/bundle/youcompleteme/install.py'
 }
