@@ -4,7 +4,7 @@ class setup::install inherits setup{
     ensure =>  latest,
   }
   
-  $packages = ["tmux", "vim", "zsh", "curl", "guake", "build-essential", "cmake", "python-dev", "python3-dev", "clang", "python-pip"]
+  $packages = ["tmux", "vim", "zsh", "curl", "build-essential", "cmake", "python-dev", "python3-dev", "clang", "python-pip"]
 
   each($packages) |$pack| {
     package { "$pack":
