@@ -47,5 +47,9 @@ class setup::config inherits setup {
       force  => true
     }
   }
+
+  exec { '/usr/bin/vim -c PluginInstall':
+  }
+
   # exec { '/usr/bin/python3 /home/olle/.vim/bundle/youcompleteme/install.py'
 }
