@@ -35,6 +35,13 @@ class setup::config inherits setup {
     user     => "$username"
   }
 
+  vcsrepo { "/home/$username/.zsh/custom/plugins/zsh-syntax-highlighting":
+    ensure   => latest,
+    provider => git,
+    source   => https://github.com/zsh-users/zsh-syntax-highlighting.git,
+    user     => "$username"
+  }
+
   exec { '/bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"':
     cwd         => "/home/$username",
     creates     => "/home/$username/.oh-my-zsh"
